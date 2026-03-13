@@ -6,5 +6,10 @@ export class Product {
     public price: number,
     public img: string,
     public category: Category,
+    public discount: number,
   ) {}
+
+  priceWithDiscountApplied(): number {
+    return this.price * (1 - this.discount)
+  }
 }

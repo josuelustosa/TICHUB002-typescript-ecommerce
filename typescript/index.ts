@@ -6,8 +6,9 @@ const category = new Category("Futebol");
 const product = new Product(
   "Chuteira Society Penalty",
   149.9,
-  "https:example.site/igm/IMAGE-01.jpeg",
+  "https:example.site/img/IMAGE-01.jpeg",
   category,
+  0.2,
 );
 
-console.log("Categoria do Produto:", product.category.title);
+console.log("Categoria do Produto:", product.priceWithDiscountApplied());

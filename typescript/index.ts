@@ -1,24 +1,28 @@
-import { Product } from "./src/model/product.model.js";
-import { Category } from "./src/model/category.model.js";
-import { Cart } from "./src/model/cart.model.js";
+import { Product } from "./src/models/Product.js";
+import { Category } from "./src/models/Category.js";
+import { Cart } from "./src/models/Cart.js";
 
-const category = new Category("Futebol");
+const category = new Category(1, "Futebol");
 
-const product = new Product(
-  "Chuteira Society Penalty",
-  149.9,
-  "https:example.site/img/IMAGE-01.jpeg",
-  category,
-  0.5,
-);
+const product1 = new Product(1, "Chuteira Society Penalty", 120.0, category);
+const product2 = new Product(2, "Bola de Futebol Nike", 89.5, category);
+const product3 = new Product(3, "Manto Flamengo Authentic", 799.99, category);
 
+// adicionando itens (Product) diferentes no Carrinho
 const cart = new Cart();
-cart.addItem(product, 1);
-cart.addItem(product, 4);
+cart.addItem(product1, 1);
 
-console.log("Categoria do Produto:", product.category.title + `\n`);
+cart.addItem(product2, 2);
+cart.addItem(product2, 3);
+
+cart.addItem(product3, 1);
+
+const totalItems = cart.getTotalItems();
+const finalPrice = cart.getFinalPrice();
+
+console.log("Itens no Carrinho: \n", JSON.stringify(cart.cartItem, null, 2));
+console.log("Quantidade de Itens no Carrinho:", totalItems);
 console.log(
-  "Valor do Produto com desconto aplicado: R$",
-  product.priceWithDiscountApplied() + `\n`,
+  "Valor Total da compra:",
+  finalPrice.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }),
 );
-console.log("Itens no carrinho: \n", cart.listProduct);

@@ -2,11 +2,31 @@ import { Product } from "./src/models/Product.js";
 import { Category } from "./src/models/Category.js";
 import { Cart } from "./src/models/Cart.js";
 
-const category = new Category(1, "Futebol");
+const productCategory: Category = {
+  id: 1,
+  name: "Futebol",
+};
 
-const product1 = new Product(1, "Chuteira Society Penalty", 120.0, category);
-const product2 = new Product(2, "Bola de Futebol Nike", 89.5, category);
-const product3 = new Product(3, "Manto Flamengo Authentic", 799.99, category);
+const product1: Product = {
+  id: 1,
+  name: "Chuteira Society Penalty",
+  price: 120.0,
+  category: productCategory,
+};
+
+const product2: Product = {
+  id: 2,
+  name: "Bola de Futebol Nike",
+  price: 89.5,
+  category: productCategory,
+};
+
+const product3: Product = {
+  id: 3,
+  name: "Manto Flamengo Authentic",
+  price: 799.99,
+  category: productCategory,
+};
 
 // adicionando itens (Product) diferentes no Carrinho
 const cart = new Cart();

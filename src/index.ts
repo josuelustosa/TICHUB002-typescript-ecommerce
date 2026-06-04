@@ -1,6 +1,6 @@
-import { Product } from "./src/models/Product.js";
-import { Category } from "./src/models/Category.js";
-import { Cart } from "./src/models/Cart.js";
+import { Product } from "./models/Product.js";
+import { Category } from "./models/Category.js";
+import { Cart } from "./models/Cart.js";
 
 const productCategory: Category = {
   id: 1,
